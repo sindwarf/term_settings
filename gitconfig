@@ -1,0 +1,78 @@
+# [user]
+# 	email = cseamount@secturion.com
+# 	name = Christopher Seamount
+
+# [core]
+#     excludesfile = ~/.term_settings/gitignore
+# 	autocrlf = input
+#   editor = vim
+
+# [pull]
+#   rebase = true
+
+# [rebase]
+#   autoStash = true
+
+# [push]
+#   default = current
+
+# [diff]
+#     tool = pycharm
+
+# [difftool "pycharm"]
+#     cmd = /usr/local/bin/charm diff "$LOCAL" "$REMOTE" && echo "Press enter to continue..." && read
+
+# [merge]
+#     tool = pycharm
+
+# [mergetool "pycharm"]
+#     cmd = /usr/local/bin/charm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+#     keepBackup = false
+
+# [alias]
+#     co = checkout
+#     ci = commit
+#     st = status
+#     br = branch
+#     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+#     logg = log --graph --oneline --all --decorate
+#     type = cat-file -t
+#     dump = cat-file -p
+#     vd = difftool --tool=vimdiff
+
+# Common git commands
+# git ls -h
+# git ls -o --exclude-standard
+# git format-patch <branch> --stdout > 01-<name>.patch
+# git am -3 <patch-file>
+# git co tags/<tag> -b <new_branch>
+# git co <SHA> -- file
+
+[user]
+	name = jsindorf
+	email = jsindorf@secturion.com
+
+[alias]
+# Normal stuff
+ st = status
+ stu = status -u no
+ sti = status --ignored
+ ci = commit
+ co = checkout
+  cob = checkout -b
+ br = branch
+
+
+# Commands taken from Jordans gitconfig
+# Pull branch from origin and create local tracker (parameter is origin/bname)
+ #pbr = checkout --track
+# Push branch to origin
+ #pu = "!git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`"
+ # Helpful long stuff from the internet
+ #lg = log --graph --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+ #hist = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+ #lol = log --graph --decorate --pretty=oneline --abbrev-commit
+ #lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+# To see full diff between branches: git diff master..branch
+ #brdiff = "!func() { git diff --name-status $1..$2; }; func"
+ #mdiff = "!func() { git diff --name-status master..$1; }; func"

@@ -1,0 +1,28 @@
+pane	01-Mobile	0	:bash	1	:*	0	:/home/clint/Dropbox/School/mobile_robotics	1	bash	:
+pane	01-Mobile	0	:bash	1	:*	1	:/home/clint/Dropbox/School/mobile_robotics	0	bash	:
+pane	01-Non-Lin	0	:bash	1	:*	0	:/home/clint/Dropbox/School/nonlinear_control/assignments	1	bash	:
+pane	01-Non-Lin	0	:bash	1	:*	1	:/home/clint/Dropbox/School/nonlinear_control/assignments	0	bash	:
+pane	01-Prog	0	:bash	1	:*	0	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	1	bash	:
+pane	01-Prog	0	:bash	1	:*	1	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	0	bash	:
+pane	01-Prog	0	:bash	1	:*	2	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	0	bash	:
+pane	01-Prog	0	:bash	1	:*	3	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	0	bash	:
+pane	01-Prog	1	:bash	0	:-	0	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	0	bash	:
+pane	01-Prog	1	:bash	0	:-	1	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	0	bash	:
+pane	01-Prog	1	:bash	0	:-	2	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	1	bash	:
+pane	01-ROS	0	:TOPIC	1	:*	0	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim/nodes	1	bash	:
+pane	01-ROS	0	:TOPIC	1	:*	1	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	0	bash	:
+pane	01-ROS	0	:TOPIC	1	:*	2	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	0	bash	:
+pane	01-ROS	0	:TOPIC	1	:*	3	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim	0	bash	:
+pane	01-ROS	1	:CORE	0	:-	0	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim/nodes	0	bash	:
+pane	01-ROS	1	:CORE	0	:-	1	:/home/clint/Dropbox/School/thesis/var_path/src/vehicle_sim/nodes	1	bash	:
+pane	01-Report	0	:bash	1	:*	0	:/home/clint/Dropbox/School/thesis/report	1	bash	:
+pane	6	0	:bash	1	:*	0	:/home/clint	1	bash	:
+window	01-Mobile	0	1	:*	44a1,213x53,0,0{106x53,0,0,1,106x53,107,0,17}
+window	01-Non-Lin	0	1	:*	c4a2,213x53,0,0{106x53,0,0,2,106x53,107,0,19}
+window	01-Prog	0	1	:*	ff06,213x53,0,0{107x53,0,0[107x27,0,0,3,107x25,0,28,4],105x53,108,0[105x27,108,0,5,105x25,108,28,6]}
+window	01-Prog	1	0	:-	ca30,213x53,0,0{107x53,0,0[107x27,0,0,7,107x25,0,28,8],105x53,108,0,9}
+window	01-ROS	0	1	:*	120c,213x53,0,0{104x53,0,0[104x29,0,0,10,104x23,0,30,11],108x53,105,0[108x29,105,0,12,108x23,105,30,13]}
+window	01-ROS	1	0	:-	cf1e,213x53,0,0[213x27,0,0,14,213x25,0,28,15]
+window	01-Report	0	1	:*	5d65,213x53,0,0,16
+window	6	0	1	:*	5d67,213x53,0,0,18
+state	01-Non-Lin	01-Report
