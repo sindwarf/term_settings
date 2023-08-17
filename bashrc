@@ -4,10 +4,11 @@
 # └────────────────────────┘
 # git config --global alias.hist "log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short"
 # Color Variables for bash
+_LIGHT_GRAY_BLUE="\[\e[1;47;34m\]"
 txtblk="\[\033[0;30m\]" # Black - Regular
 txtred="\[\033[0;31m\]" # Red
 txtgrn="\[\033[0;32m\]" # Green
-txtylw="\[\033[0;33m\]" # Yellow
+txtorg="\[\033[0;33m\]" # Yellow
 txtblu="\[\033[0;34m\]" # Blue
 txtpur="\[\033[0;35m\]" # Purple
 txtcyn="\[\033[0;36m\]" # Cyan
@@ -103,9 +104,19 @@ function general_setup() {
     source ~/.term_settings/bash_scripts/git-completion.bash
     source ~/.term_settings/bash_scripts/format.bash
     source ~/.term_settings/bash_scripts/dir-recall.bash
-    
+    GIT_PS1_SHOWDIRTYSTATE=1 #show * for unstaged and + for staged changes
+    GIT_PS1_SHOWSTASHSTATE=1 #show $ if stash exists
+    #GIT_PS1_SHOWUNTRACKEDFILES=1 #show % is there are untracked files
+    #GIT_PS1_SHOWUPSTREAM="auto" #'auto' or 'verbose' print if HEAD and origin are off
+    #GIT_PS1_STATESEPARATOR=SP  #if not SP will change character between fields
+    # GIT_PS1_SHOWCOLORHINTS=1 #show colors on state
     # PS1='\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;36m\]\h\[\033[01; 34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;35m\] $\[\033[00m\] '
-    PS1="$txtcyn\u$bldblu@$bldwht\h$bldgrn \w$bldblu\$(__git_ps1)$bldwht \$ "
+    # PS1="$txtcyn\u$bldblu@$bldwht\h$bldgrn \w$bldblu$(__git_ps1 " (%s)")$bldwht \n\$ $txtrst"
+    PS_PRE="$bldblu\u@$bldwht\h \w$txtrst"
+    PS_POST="$bldwht \n\$ $txtrst"
+    PROMPT_COMMAND='__git_ps1 "${PS_PRE}" "${PS_POST}"'
+    # PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+    # PROMPT_COMMAND='__git_ps1 "${PS}"';${PROMPT_COMMAND}
     # Turn on parallel history
     shopt -s histappend
     # Turn on checkwinsize
@@ -134,6 +145,11 @@ function general_setup() {
     alias e='nemo . &'
     alias bashrc='code ~/.bashrc'
     alias vimrc='vim ~/.vimrc'
+
+    # Modules
+    alias ma='module available'
+    alias ml='module list'
+    alias ms='module switch'
 
     # Exporting variables
     export GTEST_COLOR=1
@@ -265,3 +281,27 @@ function rt() {
 }
 
 main "$@"
+
+
+# Stolen from dowens as an example of a super cool function
+# # User specific aliases and functions
+# function sv() {
+#   dir=$(pwd)
+#   cd $(git rev-parse --show-toplevel 2>/dev/null || echo "~/git/core")
+#   gvim $(git ls-files "*/$1" | head -n1)
+#   cd $dir
+#   #gvim `find /local/dowens/clone/core -name "$1".sv* | head -n1 | sed 's!/local/dowens/clone!/home/dowens/git!g'`
+# }
+
+# _sv_completions()
+# {
+#   dir=$(pwd)
+#   cd $(git rev-parse --show-toplevel 2>/dev/null || echo "~/git/core")
+#   COMPREPLY=($(compgen -W "$(git ls-files "*.sv" | xargs basename -a)" -- "${COMP_WORDS[1]}"))
+#   cd $dir
+# }
+# complete -F _sv_completions sv
+
+# alias cgrep="find . -name \"*.[ch]\" | xargs grep -i $1"
+# alias vgrep="find . -name \"*.sv\" | xargs grep -i $1"
+# #alias ctags="/usr/bin/ctags"
